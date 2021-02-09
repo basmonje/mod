@@ -9,7 +9,9 @@ const Paragraph = styled.p`
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   font-size: 1rem;
-  color: var(--color-text);
+  text-align: justify;
+  text-justify: inter-word;
+
   @media (min-width: ${(props) => props.theme.dimension.small}) {
     font-size: 1.4rem;
   }

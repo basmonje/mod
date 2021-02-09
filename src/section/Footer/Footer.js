@@ -50,7 +50,6 @@ function Text({ title, description }) {
 
 const Footer = styled.footer`
   width: 100%;
-  padding: 1rem;
   display: flex;
   justify-content: flex-end;
 
@@ -66,8 +65,10 @@ const Card = styled.div`
   }
 
   p {
-    margin-top: 30px;
     line-height: 30px;
-    margin-bottom: 2rem;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right: 2rem;
+    margin-bottom: 30px !important;
   }
 `;

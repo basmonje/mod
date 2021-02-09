@@ -29,12 +29,17 @@ function CardBlog({ read, title, date, description, src }) {
   );
 }
 
-function CardSimple({ title, date, description }) {
+function CardSimple({ title, date, description, src }) {
   return (
     <Card as="article">
-      <Heading>{title}</Heading>
-      <Date>{date}</Date>
-      <Paragraph>{description}</Paragraph>
+      <BoxNotice>
+        <div>
+          <img src={src} alt={title} />
+        </div>
+        <Heading>{title}</Heading>
+        <Date>{date}</Date>
+        <Description>{description}</Description>
+      </BoxNotice>
     </Card>
   );
 }
@@ -42,6 +47,15 @@ function CardSimple({ title, date, description }) {
 const Card = styled.div`
   padding: 1rem;
   background: ${(props) => props.background || ""};
+`;
+
+const BoxNotice = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > div img {
+    width: 100%;
+  }
 `;
 
 const BoxResponsiveBlog = styled.div`

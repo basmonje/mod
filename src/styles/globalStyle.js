@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -19,9 +19,8 @@ li {
   list-style: none;
 }
 
-
-body {
+/* body {
   background: var(--color-background) !important;
   transition: all 0.50s linear;
-}
-`
+} */
+`;

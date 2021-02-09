@@ -9,6 +9,8 @@ const Description = styled.p`
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
 
   @media (min-width: ${(props) => props.theme.dimension.small}) {
     font-size: 1.4rem;

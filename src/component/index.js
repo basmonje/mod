@@ -10,6 +10,7 @@ import BoxComponent from "./Box";
 import TitleComponent from "./Title";
 import DescriptionComponent from "./Description";
 import FormComponent from "./Form";
+import BoxTitleComponent from "./BoxTitle";
 
 export const Container = (props) => <ContainerComponent {...props} />;
 export const Card = (props) => <CardComponent {...props} />;
@@ -23,3 +24,4 @@ export const Box = (props) => <BoxComponent {...props} />;
 export const Title = (props) => <TitleComponent {...props} />;
 export const Description = (props) => <DescriptionComponent {...props} />;
 export const Form = (props) => <FormComponent {...props} />;
+export const BoxTitle = (props) => <BoxTitleComponent {...props} />;

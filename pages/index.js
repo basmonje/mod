@@ -1,7 +1,7 @@
 import SEO from "section/SEO";
 import Hero from "section/Hero";
 import Navbar from "section/Navbar";
-import Blog from "section/Blog";
+import { BlogHome } from "section/Blog";
 import Footer from "section/Footer";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <SEO title="Inicio" />
       <Navbar />
       <Hero />
-      <Blog />
+      <BlogHome />
       <Footer />
     </>
   );

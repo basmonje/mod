@@ -15,17 +15,11 @@ export default function BlogHome() {
   return (
     <Wrapper>
       <Container>
-        <Flex paTop="100px" paBot="100px">
-          <Title size="medium" level="1">
-            Noticias y Acciones
-          </Title>
-          <Paragraph>Nuestra Región en crecimiento</Paragraph>
-        </Flex>
-        <BoxTitle title="Últimas Noticias" href="/noticias" />
+        <BoxTitle title="Todas las entradas" count="3 Noticias" />
         <Box>
-          <Col type="col">
+          <Col type="col-3">
             <Card
-              type="blog"
+              type="simple"
               title="Primer title"
               date="2020 / 05 / 04"
               read="Tiempo de lectura 2 min"
@@ -33,9 +27,19 @@ export default function BlogHome() {
               src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
             />
           </Col>
-          <Col type="col">
+          <Col type="col-3">
             <Card
-              type="blog"
+              type="simple"
+              title="Primer title"
+              date="2020 / 05 / 04"
+              read="Tiempo de lectura 2 min"
+              description="Mi primer description"
+              src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            />
+          </Col>
+          <Col type="col-3">
+            <Card
+              type="simple"
               title="Primer title"
               date="2020 / 05 / 04"
               read="Tiempo de lectura 2 min"
@@ -51,5 +55,6 @@ export default function BlogHome() {
 
 const Wrapper = styled.section`
   width: 100%;
+  padding-top: 100px;
   padding-bottom: 100px;
 `;
