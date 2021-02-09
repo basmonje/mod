@@ -29,24 +29,43 @@ function CardBlog({ read, title, date, description, src }) {
   );
 }
 
-function CardSimple({ title, date, description, src }) {
+function CardSimple({ title, date, description, src, count }) {
   return (
-    <Card as="article">
+    <Card as="article" background="#f6f6f6">
       <BoxNotice>
         <div>
           <img src={src} alt={title} />
         </div>
-        <Heading>{title}</Heading>
-        <Date>{date}</Date>
-        <Description>{description}</Description>
+        <Box>
+          <Date>
+            {date} minutos de lectura {count}
+          </Date>
+          <Heading level={5}>{title}</Heading>
+          <Description>{description}</Description>
+        </Box>
       </BoxNotice>
     </Card>
   );
 }
 
 const Card = styled.div`
-  padding: 1.2rem 1rem;
-  background: ${(props) => props.background || ""};
+  height: 100%;
+  width: 100%;
+  padding: 2rem 1rem;
+  background: ${(props) => props.background || "#d44"};
+  border: none;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+  h5,
+  p,
+  span {
+    color: #333;
+  }
+
+  @media (min-width: ${(props) => props.theme.dimension.mobile}) {
+    padding: 2rem 2rem;
+  }
 `;
 
 const BoxNotice = styled.div`
@@ -91,4 +110,8 @@ const BoxResponsiveBlog = styled.div`
       width: 40%;
     }
   }
+`;
+
+const Box = styled.div`
+  padding: 1rem;
 `;

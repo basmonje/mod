@@ -14,10 +14,10 @@ const Description = styled.p`
   color: var(--color-text);
 
   @media (min-width: ${(props) => props.theme.dimension.small}) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 `;

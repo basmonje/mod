@@ -10,13 +10,15 @@ export default function Heading({ children, level = 2 }) {
 const Wrapper = styled.h2`
   font-weight: 600;
   color: var(--color-text);
-  font-size: 2.5rem;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 
   @media (min-width: ${(props) => props.theme.dimension.small}) {
-    font-size: 2.9rem;
+    font-size: 2.4rem;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
   }
 `;

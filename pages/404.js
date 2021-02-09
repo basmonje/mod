@@ -1,5 +1,6 @@
 import SEO from "section/SEO";
 import Navbar from "section/Navbar";
+import ThemeSwitch from "../src/component/ThemeSwitch";
 
 const styles = {
   maxWidth: "500px",
@@ -10,6 +11,7 @@ const styles = {
 function Error() {
   return (
     <>
+      <ThemeSwitch />
       <SEO title="Página no encontrada." />
       <Navbar />
       <div style={styles}>

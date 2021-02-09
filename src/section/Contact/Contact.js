@@ -42,6 +42,9 @@ function Text() {
   return (
     <Context>
       <h1>¿Tienes alguna duda y necesitas contactarme?</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, animi.
+      </p>
     </Context>
   );
 }
@@ -49,6 +52,10 @@ function Text() {
 const Context = styled.div`
   h1 {
     font-size: 3rem;
+    color: var(--color-text);
+  }
+
+  p {
     color: var(--color-text);
   }
 `;

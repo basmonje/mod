@@ -22,6 +22,8 @@ const Col2 = styled.div`
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     flex: 0 0 50%;
     max-width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 `;
 
@@ -33,10 +35,14 @@ const Col3 = styled.div`
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     flex: 0 0 50%;
     max-width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.tablet}) {
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
