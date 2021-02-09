@@ -76,6 +76,11 @@ const Wrapper = styled.section`
   width: 100%;
   padding-top: 100px;
   padding-bottom: 100px;
+
+  h2,
+  p {
+    color: var(--color-text) !important;
+  }
 `;
 
 const Flex = styled.div`
@@ -97,6 +102,10 @@ const Context = styled.div`
 const Sidebar = styled.aside`
   display: flex;
   flex: 0 0 100%;
+
+  h1 {
+    color: var(--color-text) !important;
+  }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     flex: 0 0 30%;

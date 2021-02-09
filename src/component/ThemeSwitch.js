@@ -14,12 +14,21 @@ export default function ThemeSwitch() {
       <Box>
         <p>Modo Lectura</p>
         <Group>
-          <ButtonBorder onClick={() => setColorMode("light")}>
+          <ButtonBorder
+            active={colorMode === "light" ? true : false}
+            onClick={() => setColorMode("light")}
+          >
             LIGHT
           </ButtonBorder>
-          <ButtonBorder onClick={() => setColorMode("dark")}>DARK</ButtonBorder>
+
+          <ButtonBorder
+            active={colorMode === "dark" ? true : false}
+            onClick={() => setColorMode("dark")}
+          >
+            DARK
+          </ButtonBorder>
           <ButtonAround onClick={handleSwitch}>
-            <Icon size="mini" name="arrow left" />
+            <Icon size="mini" name={openSwich ? "arrow right" : "arrow left"} />
           </ButtonAround>
         </Group>
       </Box>
@@ -42,7 +51,7 @@ const Box = styled.div`
   box-shadow: rgba(22, 28, 45, 0.18) 0px 22px 34px;
   box-sizing: border-box;
   min-width: 0px;
-  background: #d44;
+  background: #00af91;
   border: medium none transparent;
   max-width: 185px;
   text-align: center;
@@ -51,7 +60,10 @@ const Box = styled.div`
   position: relative;
 
   p {
-    color: #fff;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
   }
 `;
 
@@ -67,7 +79,8 @@ const Group = styled.div`
 `;
 
 const ButtonBorder = styled.button`
-  background: transparent none repeat scroll 0% 0%;
+  background: ${(props) =>
+    props.active ? "#d44" : "transparent none repeat scroll 0% 0%"};
   border: medium none;
   width: 50%;
   font-size: 11px;
@@ -102,7 +115,7 @@ const ButtonAround = styled.button`
   border-bottom-left-radius: 10px;
   transform: translateX(-100%);
   outline: currentcolor none medium !important;
-  background-color: #d44;
+  background-color: #00af91;
 
   i {
     color: #fff;

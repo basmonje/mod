@@ -25,6 +25,11 @@ const Wrapper = styled.section`
   display: flex;
   align-items: center;
   background: #a4ebf3;
+
+  h1,
+  p {
+    color: #333 !important;
+  }
 `;
 
 const Content = styled.div`

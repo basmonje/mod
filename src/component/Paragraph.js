@@ -11,6 +11,7 @@ const Paragraph = styled.p`
   font-size: 1rem;
   text-align: justify;
   text-justify: inter-word;
+  color: var(--color-text);
 
   @media (min-width: ${(props) => props.theme.dimension.small}) {
     font-size: 1.4rem;

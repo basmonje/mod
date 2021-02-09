@@ -24,14 +24,24 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
 
+  h1 {
+    color: var(--color-text);
+  }
+
   p {
+    padding-right: 0;
+    font-size: 18px;
+    color: var(--color-text);
+  }
+
+  a {
+    color: var(--color-text);
     padding-right: 0;
     font-size: 18px;
   }
 
-  a {
-    padding-right: 0;
-    font-size: 18px;
+  a:hover {
+    color: var(--color-primary);
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {

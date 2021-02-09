@@ -1,15 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Container,
-  Title,
-  Paragraph,
-  Flex,
-  Box,
-  Col,
-  Card,
-  BoxTitle,
-} from "../../component";
+import { Container, Box, Col, Card, BoxTitle } from "../../component";
 
 export default function BlogHome() {
   return (

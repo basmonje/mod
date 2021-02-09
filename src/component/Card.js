@@ -45,7 +45,7 @@ function CardSimple({ title, date, description, src }) {
 }
 
 const Card = styled.div`
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   background: ${(props) => props.background || ""};
 `;
 
@@ -61,6 +61,11 @@ const BoxNotice = styled.div`
 const BoxResponsiveBlog = styled.div`
   display: flex;
   flex-direction: column;
+  h2,
+  p,
+  span {
+    color: #333 !important;
+  }
 
   .context {
     display: flex;

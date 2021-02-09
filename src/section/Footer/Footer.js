@@ -7,7 +7,7 @@ export default function FooterComponent({ contact = true }) {
       <Container>
         {contact && <Contact />}
         <Flex paTop="100px">
-          <span>
+          <span style={{ color: "var(--color-text)" }}>
             Copyright © {new Date().getFullYear()} | Pedro Venegas Todos los
             derechos reservados
           </span>
@@ -55,6 +55,16 @@ const Footer = styled.footer`
 
   padding-top: 100px;
   padding-bottom: 100px;
+
+  label {
+    color: var(--color-text) !important;
+  }
+
+  .error {
+    label {
+      color: #ec4646 !important;
+    }
+  }
 `;
 
 const Card = styled.div`
@@ -62,6 +72,7 @@ const Card = styled.div`
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    color: var(--color-text);
   }
 
   p {
@@ -70,5 +81,6 @@ const Card = styled.div`
     text-justify: inter-word;
     padding-right: 2rem;
     margin-bottom: 30px !important;
+    color: var(--color-text);
   }
 `;

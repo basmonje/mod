@@ -26,6 +26,16 @@ const Wrapper = styled.section`
 
   display: flex;
   align-items: center;
+
+  label {
+    color: var(--color-text) !important;
+  }
+
+  .error {
+    label {
+      color: #ec4646 !important;
+    }
+  }
 `;
 
 function Text() {
@@ -39,5 +49,6 @@ function Text() {
 const Context = styled.div`
   h1 {
     font-size: 3rem;
+    color: var(--color-text);
   }
 `;
