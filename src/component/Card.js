@@ -21,9 +21,7 @@ function CardBlog({ read, title, date, description, src }) {
           </Date>
           <Description>{description}</Description>
         </div>
-        <div className="img">
-          <img width="100%" src={src} alt={title} />
-        </div>
+        <img width="100%" height="100%" src={src} alt={title} />
       </BoxResponsiveBlog>
     </Card>
   );
@@ -51,7 +49,6 @@ function CardSimple({ title, date, description, src, count }) {
 const Card = styled.div`
   height: 100%;
   width: 100%;
-  padding: 2rem 1rem;
   background: ${(props) => props.background || "#d44"};
   border: none;
   border-radius: 8px !important;
@@ -62,10 +59,6 @@ const Card = styled.div`
   span {
     color: #333;
   }
-
-  @media (min-width: ${(props) => props.theme.dimension.mobile}) {
-    padding: 2rem 2rem;
-  }
 `;
 
 const BoxNotice = styled.div`
@@ -74,6 +67,7 @@ const BoxNotice = styled.div`
 
   > div img {
     width: 100%;
+    height: 100%;
   }
 `;
 
@@ -89,13 +83,15 @@ const BoxResponsiveBlog = styled.div`
   .context {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     margin-bottom: 2rem;
     width: 100%;
+    height: 100%;
   }
 
-  .img {
+  img {
     width: 100%;
+    height: 100%;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
@@ -103,15 +99,17 @@ const BoxResponsiveBlog = styled.div`
 
     .context {
       width: 60%;
+      height: 100%;
       margin-bottom: 0;
     }
 
-    .img {
+    img {
       width: 40%;
+      height: 100%;
     }
   }
 `;
 
 const Box = styled.div`
-  padding: 1rem;
+  padding: 2rem;
 `;

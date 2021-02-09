@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Col, Box, Form, Flex } from "../../component";
+import { Container, Col, Box, Form, Flex, LinkText } from "../../component";
 
 export default function FooterComponent({ contact = true }) {
   return (
@@ -29,7 +29,13 @@ function Contact() {
         />
         <Text
           title="Correo Electrónico"
+          href="mailto:pedrovenegas.core@gmail.com"
           description="pedrovenegas.core@gmail.com"
+        />
+        <Text
+          title="Telefono"
+          href="mailto:56918945678"
+          description="+(56) 9 1894897"
         />
       </Col>
       <Col type="col-2">
@@ -39,11 +45,11 @@ function Contact() {
   );
 }
 
-function Text({ title, description }) {
+function Text({ title, description, href }) {
   return (
     <Card>
       <h3>{title}</h3>
-      <p>{description}</p>
+      <LinkText href={href}>{description}</LinkText>
     </Card>
   );
 }
@@ -68,6 +74,11 @@ const Footer = styled.footer`
 `;
 
 const Card = styled.div`
+  margin-bottom: 1rem;
+  a {
+    line-height: 30px;
+    color: var(--color-text);
+  }
   h3 {
     font-size: 30px;
     font-weight: 600;

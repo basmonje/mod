@@ -51,7 +51,7 @@ const Box = styled.div`
   box-shadow: rgba(22, 28, 45, 0.18) 0px 22px 34px;
   box-sizing: border-box;
   min-width: 0px;
-  background: #00af91;
+  background: ${(props) => props.theme.color.themeswitch};
   border: medium none transparent;
   max-width: 185px;
   text-align: center;
@@ -80,7 +80,9 @@ const Group = styled.div`
 
 const ButtonBorder = styled.button`
   background: ${(props) =>
-    props.active ? "#d44" : "transparent none repeat scroll 0% 0%"};
+    props.active
+      ? props.theme.color.tone.active
+      : "transparent none repeat scroll 0% 0%"};
   border: medium none;
   width: 50%;
   font-size: 11px;
@@ -115,10 +117,10 @@ const ButtonAround = styled.button`
   border-bottom-left-radius: 10px;
   transform: translateX(-100%);
   outline: currentcolor none medium !important;
-  background-color: #00af91;
+  background-color: ${(props) => props.theme.color.themeswitch};
 
   i {
-    color: #fff;
+    color: #333;
   }
 
   &:hover {

@@ -1,10 +1,10 @@
 export const breakPoints = {
   mobile: "600px",
-}
+};
 
 export const fonts = {
   base: "Roboto, sans-serif",
-}
+};
 
 export const colors = {
   black: "#191b1f",
@@ -17,7 +17,7 @@ export const colors = {
   linearBg1: "linear-gradient(#191b1f, #090a0b)",
   green: "#adce74",
   greenD: "#61b15a",
-}
+};
 
 const Theme = {
   dimension: {
@@ -26,6 +26,14 @@ const Theme = {
     tablet: "992px",
     desktop: "1200px",
   },
-}
+  color: {
+    themeswitch: "#ddd",
+    tone: {
+      bg: "#ddd",
+      hover: "#ddd5",
+      active: "#ddd9",
+    },
+  },
+};
 
-export default Theme
+export default Theme;
