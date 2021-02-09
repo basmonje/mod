@@ -19,8 +19,9 @@ li {
   list-style: none;
 }
 
-/* body {
+body {
   background: var(--color-background) !important;
+  color: var(--color-text);
   transition: all 0.50s linear;
-} */
+}
 `;

@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-export const ThemeContext = React.createContext()
+export const ThemeContext = React.createContext();
 
 const COLORS = {
   light: {
@@ -13,49 +13,49 @@ const COLORS = {
     text: "#ddd",
     background: "#252525",
   },
-}
+};
 
 export const DarkModeProvider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = React.useState(undefined)
+  const [colorMode, rawSetColorMode] = React.useState(undefined);
 
   React.useEffect(() => {
-    const root = window.document.documentElement
+    const root = window.document.documentElement;
 
     const initialColorValue = root.style.getPropertyValue(
       "--initial-color-mode"
-    )
+    );
 
-    rawSetColorMode(initialColorValue)
-  }, [])
+    rawSetColorMode(initialColorValue);
+  }, []);
 
   const contextValue = React.useMemo(() => {
     function setColorMode(value) {
-      const root = window.document.documentElement
+      const root = window.document.documentElement;
 
-      localStorage.setItem("color-mode", value)
+      localStorage.setItem("color-mode", value);
 
       root.style.setProperty(
         "--color-text",
         value === "light" ? COLORS.light.text : COLORS.dark.text
-      )
+      );
 
       root.style.setProperty(
         "--color-background",
         value === "light" ? COLORS.light.background : COLORS.dark.background
-      )
+      );
 
       root.style.setProperty(
         "--color-primary",
         value === "light" ? COLORS.light.primary : COLORS.dark.primary
-      )
-      rawSetColorMode(value)
+      );
+      rawSetColorMode(value);
     }
 
     return {
       colorMode,
       setColorMode,
-    }
-  }, [colorMode, rawSetColorMode])
+    };
+  }, [colorMode, rawSetColorMode]);
 
   // const setColorMode = (value) => {
   //   const root = window.document.documentElement
@@ -87,5 +87,5 @@ export const DarkModeProvider = ({ children }) => {
     <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
-  )
-}
+  );
+};
