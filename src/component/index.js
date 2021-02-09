@@ -1,0 +1,25 @@
+import ContainerComponent from "./Container";
+import CardComponent from "./Card";
+import ColComponent from "./Col";
+import FlexComponent from "./Flex";
+import HeadingComponent from "./Heading";
+import LinkButtonComponent from "./LinkButton";
+import ParagraphComponent from "./Paragraph";
+import DateComponent from "./Date";
+import BoxComponent from "./Box";
+import TitleComponent from "./Title";
+import DescriptionComponent from "./Description";
+import FormComponent from "./Form";
+
+export const Container = (props) => <ContainerComponent {...props} />;
+export const Card = (props) => <CardComponent {...props} />;
+export const Col = (props) => <ColComponent {...props} />;
+export const Flex = (props) => <FlexComponent {...props} />;
+export const Heading = (props) => <HeadingComponent {...props} />;
+export const LinkButton = (props) => <LinkButtonComponent {...props} />;
+export const Paragraph = (props) => <ParagraphComponent {...props} />;
+export const Date = (props) => <DateComponent {...props} />;
+export const Box = (props) => <BoxComponent {...props} />;
+export const Title = (props) => <TitleComponent {...props} />;
+export const Description = (props) => <DescriptionComponent {...props} />;
+export const Form = (props) => <FormComponent {...props} />;

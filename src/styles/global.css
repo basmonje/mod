@@ -1,0 +1,38 @@
+:root {
+  --primary: #d44444;
+  --font-light: #dddddd;
+  --font-gray: #778;
+  --font-dark: #111;
+  --background-light: #fff;
+  --background-dark: #0f0f0f;
+  --background-dark-navbar: #090a0b;
+}
+
+/* Google Font Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body.dark-mode {
+  background: var(--background-dark);
+  color: var(--font-light);
+}
+
+body.light-mode {
+  background: var(--background-light);
+  color: var(--font-dark);
+}
