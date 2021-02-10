@@ -4,7 +4,7 @@ import Footer from "section/Footer";
 import Notice from "section/Notice";
 
 import { getNoticeBySlug } from "../../src/api/notice";
-import Layout from "../src/section/Layout";
+import Layout from "../../src/section/Layout";
 
 export default function NoticeWrapper({ notice, base }) {
   const { title, description, date, count, content, media } = notice.notice[0];
