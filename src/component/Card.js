@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 import { Heading, Paragraph, Date, Flex, Description } from "component";
 
@@ -10,24 +11,28 @@ export default function CardComponent({ type, ...props }) {
   return null;
 }
 
-function CardBlog({ read, title, date, description, src }) {
+function CardBlog({ read, title, date, description, src, slug }) {
   return (
     <Card as="article" background="#f6f6f6">
       <BoxResponsiveBlog>
         <div className="context">
-          <Heading>{title}</Heading>
+          <Heading>
+            <Link href={"/noticia/[slug]"} as={`/noticia/${slug}`}>
+              <a>{title}</a>
+            </Link>
+          </Heading>
           <Date>
-            {date} {read}
+            {date} ~ {read} de lectura.
           </Date>
           <Description>{description}</Description>
         </div>
-        <img width="100%" height="100%" src={src} alt={title} />
+        <img src={src} alt={title} />
       </BoxResponsiveBlog>
     </Card>
   );
 }
 
-function CardSimple({ title, date, description, src, count }) {
+function CardSimple({ title, date, description, src, read }) {
   return (
     <Card as="article" background="#f6f6f6">
       <BoxNotice>
@@ -36,7 +41,7 @@ function CardSimple({ title, date, description, src, count }) {
         </div>
         <Box>
           <Date>
-            {date} minutos de lectura {count}
+            {date} ~ {read} de lectura.
           </Date>
           <Heading level={5}>{title}</Heading>
           <Description>{description}</Description>
@@ -68,6 +73,7 @@ const BoxNotice = styled.div`
   > div img {
     width: 100%;
     height: 100%;
+    border-radius: 8px 8px 0 0;
   }
 `;
 
@@ -91,21 +97,24 @@ const BoxResponsiveBlog = styled.div`
 
   img {
     width: 100%;
-    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 0 0 8px 8px;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     flex-direction: row;
 
     .context {
-      width: 60%;
+      width: 55%;
       height: 100%;
       margin-bottom: 0;
     }
 
     img {
-      width: 40%;
-      height: 100%;
+      width: 45%;
+      border-radius: 0 8px 8px 0;
     }
   }
 `;

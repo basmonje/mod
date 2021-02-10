@@ -1,28 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Flex, Title, Description, Date } from "../../component";
+import ReactMarkdown from "react-markdown";
+import {
+  Container,
+  Flex,
+  Title,
+  Description,
+  Date,
+  NavPost,
+} from "../../component";
 
-export default function Notice() {
+export default function Notice(props) {
+  const { title, description, date, read, content, nav } = props;
   return (
     <Wrapper>
       <Container>
         <Flex direction="column">
           <Flex direction="column" align="flex-start" justify="flex-start">
-            <Title size="small">Primer contenido</Title>
-            <Date>2020 / 15 /15 ~ 5 min de lectura.</Date>
-            <Description>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Deserunt, molestias. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Praesentium tempore dolor a veritatis corrupti.
-              Molestias!
-            </Description>
+            <Title size="small">{title}</Title>
+            <Date>
+              {date} ~ {read} de lectura.
+            </Date>
+            <Description>{description}</Description>
           </Flex>
           <Markdown>
-            <h1>Primer contenido</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Deserunt, molestias.
-            </p>
+            <ReactMarkdown children={content} />
+            <NavPost data={nav} />
           </Markdown>
         </Flex>
       </Container>

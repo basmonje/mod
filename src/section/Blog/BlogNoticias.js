@@ -1,43 +1,41 @@
 import React from "react";
 import styled from "styled-components";
+import { Loader } from "semantic-ui-react";
+import { size } from "lodash";
 import { Container, Box, Col, Card, BoxTitle } from "../../component";
 
-export default function BlogHome() {
+export default function BlogHome({ data }) {
+  let countData;
+  if (data.length > 1) {
+    countData = `${size(data)} Noticias`;
+  } else {
+    countData = `${size(data)} Noticia`;
+  }
   return (
     <Wrapper>
       <Container>
-        <BoxTitle title="Todas las entradas" count="3 Noticias" />
+        <BoxTitle title="Todas las entradas" count={countData} />
         <Box>
-          <Col type="col-2">
-            <Card
-              type="simple"
-              title="Primer title"
-              date="2020 / 05 / 04"
-              read="Tiempo de lectura 2 min"
-              description="Mi primer description"
-              src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-          </Col>
-          <Col type="col-2">
-            <Card
-              type="simple"
-              title="Primer title"
-              date="2020 / 05 / 04"
-              read="Tiempo de lectura 2 min"
-              description="Mi primer description"
-              src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-          </Col>
-          <Col type="col-2">
-            <Card
-              type="simple"
-              title="Primer title"
-              date="2020 / 05 / 04"
-              read="Tiempo de lectura 2 min"
-              description="Mi primer description esto no puede ser cierto cuanta mantequilla estas hechando dios mio"
-              src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-          </Col>
+          {!data && <Loader>Cargando Noticias</Loader>}
+          {data && size(data) === 0 && (
+            <div>
+              <h3>No hay noticias</h3>
+            </div>
+          )}
+
+          {size(data) > 0 &&
+            data.map(({ title, description, date, read, img, slug }) => (
+              <Col type="col-2" key={slug}>
+                <Card
+                  type="simple"
+                  title={title}
+                  date={date}
+                  read={read}
+                  description={description}
+                  src={img}
+                />
+              </Col>
+            ))}
         </Box>
       </Container>
     </Wrapper>

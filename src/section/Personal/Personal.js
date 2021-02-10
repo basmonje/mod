@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../../component";
+import { Container, Description } from "../../component";
 
 export default function Personal() {
   return (
@@ -8,39 +8,40 @@ export default function Personal() {
       <Container>
         <Flex>
           <Context>
-            <p>
+            <img src="/assets/img/background.jpeg" alt="" />
+            <Description>
               Nació en Talcahuano el 27 de febrero de 1959. Desde muy joven
               dedico tiempo al deporte (maratones y artes marciales).
-            </p>
+            </Description>
             <h2>Académica</h2>
-            <p>
+            <Description>
               Cursó la enseñanza básica y media en la ciudad de Talcahuano y
               Puerto Natales. Obtuvo dos Diplomados, en Seguridad Privada en la
               Universidad Santo Tomas y Seguridad Ciudadana en la Universidad de
               Chile.
-            </p>
+            </Description>
             <h2>Institucional</h2>
-            <p>
+            <Description>
               1976-1979 Se desempeño en la Infantería de Marina, destacado en
               Talcahuano y la región de Magallanes. 1981-2011 Se desempeño en
               Carabineros de Chile, llegando al grado más alto de su Escalafón,
               como Suboficial Mayor de Carabineros, obteniendo la Especialidad
               de Perito Criminalística.
-            </p>
+            </Description>
             <h2>Laboral</h2>
-            <p>
+            <Description>
               2012-2013: Propietario de la empresa de Seguridad Privada PVG
               (Guardias y Asesoría).
-            </p>
+            </Description>
             <h2>Comunitaria</h2>
-            <p>
+            <Description>
               2012: Lideró la Junta de Vecinos Portal San Pedro de la Comuna de
               San Pedro de la Paz, gestionando en su mandato proyectos de
               acercamiento a la comunidad entre ellos la sede para su
               organización vecinal.
-            </p>
+            </Description>
             <h2>Política</h2>
-            <p>
+            <Description>
               2012-2016: Fue elegido Concejal de forma independiente por la
               comuna de San Pedro de la Paz, obteniendo 3.700 votos, ocupando la
               mayoría nacional en su calidad de independiente, periodo que
@@ -61,7 +62,7 @@ export default function Personal() {
               Juana y Hualqui, faltando 260 votos para ser electo. 2020: Asume
               el cargo de Consejero Regional, por la renuncia de un Consejero en
               ejercicio.
-            </p>
+            </Description>
           </Context>
           <Sidebar>
             <h1>Sidebar</h1>
@@ -92,6 +93,11 @@ const Context = styled.div`
   display: flex;
   flex-direction: column;
   flex: 100%;
+
+  img {
+    margin-bottom: 1.2rem;
+    width: 100%;
+  }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     flex: 0 0 70%;

@@ -15,14 +15,14 @@ export default function ThemeSwitch() {
         <p>Modo Lectura</p>
         <Group>
           <ButtonBorder
-            active={colorMode === "light" ? true : false}
+            active={colorMode === "light" ? "#ddd" : ""}
             onClick={() => setColorMode("light")}
           >
             LIGHT
           </ButtonBorder>
 
           <ButtonBorder
-            active={colorMode === "dark" ? true : false}
+            active={colorMode === "dark" ? "#ddd" : ""}
             onClick={() => setColorMode("dark")}
           >
             DARK
@@ -68,7 +68,6 @@ const Box = styled.div`
 `;
 
 const Group = styled.div`
-  box-sizing: border-box;
   min-width: 0px;
   box-shadow: rgba(22, 28, 45, 0.2) 0px 12px 34px;
   border-radius: 33px;
@@ -79,10 +78,7 @@ const Group = styled.div`
 `;
 
 const ButtonBorder = styled.button`
-  background: ${(props) =>
-    props.active
-      ? props.theme.color.tone.active
-      : "transparent none repeat scroll 0% 0%"};
+  background: ${(props) => props.active && props.active};
   border: medium none;
   width: 50%;
   font-size: 11px;

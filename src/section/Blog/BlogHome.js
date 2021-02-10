@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Loader } from "semantic-ui-react";
+import { size } from "lodash";
 import {
   Container,
   Title,
@@ -11,7 +13,7 @@ import {
   BoxTitle,
 } from "../../component";
 
-export default function BlogHome() {
+export default function BlogHome({ data }) {
   return (
     <Wrapper>
       <Container>
@@ -23,26 +25,26 @@ export default function BlogHome() {
         </Flex>
         <BoxTitle title="Últimas Noticias" href="/noticias" />
         <Box>
-          <Col type="col">
-            <Card
-              type="blog"
-              title="Primer title"
-              date="2020 / 05 / 04"
-              read="Tiempo de lectura 2 min"
-              description="Mi primer description"
-              src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-          </Col>
-          <Col type="col">
-            <Card
-              type="blog"
-              title="Primer title"
-              date="2020 / 05 / 04"
-              read="Tiempo de lectura 2 min"
-              description="Mi primer description"
-              src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-          </Col>
+          {!data && <Loader>Cargando Noticias</Loader>}
+          {data && size(data) === 0 && (
+            <div>
+              <h3>No hay noticias</h3>
+            </div>
+          )}
+          {size(data) > 0 &&
+            data.map(({ title, slug, description, date, read, img }) => (
+              <Col key={slug} type="col">
+                <Card
+                  type="blog"
+                  title={title}
+                  read={read}
+                  date={date}
+                  description={description}
+                  src={img}
+                  slug={slug}
+                />
+              </Col>
+            ))}
         </Box>
       </Container>
     </Wrapper>

@@ -1,5 +1,13 @@
 import styled from "styled-components";
-import { Container, Col, Box, Form, Flex, LinkText } from "../../component";
+import {
+  Container,
+  Col,
+  Box,
+  Form,
+  Flex,
+  LinkText,
+  Title,
+} from "../../component";
 
 export default function FooterComponent({ contact = true }) {
   return (
@@ -34,11 +42,12 @@ function Contact() {
         />
         <Text
           title="Telefono"
-          href="mailto:56918945678"
+          href="tel:56918945678"
           description="+(56) 9 1894897"
         />
       </Col>
       <Col type="col-2">
+        <Title size="small">Contáctame</Title>
         <Form />
       </Col>
     </Box>

@@ -12,6 +12,7 @@ import DescriptionComponent from "./Description";
 import FormComponent from "./Form";
 import BoxTitleComponent from "./BoxTitle";
 import LinkTextComponent from "./LinkText";
+import NavPostComponent from "./NavPost";
 
 export const Container = (props) => <ContainerComponent {...props} />;
 export const Card = (props) => <CardComponent {...props} />;
@@ -27,3 +28,4 @@ export const Description = (props) => <DescriptionComponent {...props} />;
 export const Form = (props) => <FormComponent {...props} />;
 export const BoxTitle = (props) => <BoxTitleComponent {...props} />;
 export const LinkText = (props) => <LinkTextComponent {...props} />;
+export const NavPost = (props) => <NavPostComponent {...props} />;

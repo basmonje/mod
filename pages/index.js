@@ -5,38 +5,27 @@ import Navbar from "section/Navbar";
 import { BlogHome } from "section/Blog";
 import Footer from "section/Footer";
 import ThemeSwitch from "../src/component/ThemeSwitch";
-import Modal from "../src/component/Modal";
-import useScroll from "../src/hooks/useScroll";
+import { getLastNoticesApi } from "../src/api/notice";
 
-export default function Home() {
-  const [showModal, setShowModal] = React.useState(false);
-  // const onShowModal = () => setShowModal(true);
-
-  // const scroll = useScroll();
-
-  // React.useEffect(() => {
-  //   if (scroll.scrollY >= 500) {
-  //     setShowModal(true);
-  //   } else {
-  //     setShowModal(false);
-  //   }
-  // }, [scroll]);
+export default function Home({ response }) {
   return (
     <>
       <ThemeSwitch />
       <SEO title="Inicio" />
       <Navbar />
       <Hero />
-      <BlogHome />
+      <BlogHome data={response} />
       <Footer />
-      <Modal
-        show={showModal}
-        setShow={setShowModal}
-        title="Nuevo titulo"
-        size="small"
-      >
-        <h1>Primer contenido</h1>
-      </Modal>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const response = await getLastNoticesApi(5);
+
+  return {
+    props: {
+      response,
+    },
+  };
 }
