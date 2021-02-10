@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Icon } from "semantic-ui-react";
+import { animateScroll } from "react-scroll";
 import {
   Container,
   Col,
@@ -7,18 +9,23 @@ import {
   Flex,
   LinkText,
   Title,
+  LinkButton,
 } from "../../component";
 
 export default function FooterComponent({ contact = true, base }) {
+  const handleScrollTop = () => animateScroll.scrollToTop();
   return (
     <Footer>
       <Container>
         {contact && <Contact base={base} />}
-        <Flex paTop="100px">
+        <Flex paTop="100px" justify="space-between" direction="row">
           <span style={{ color: "var(--color-text)" }}>
             Copyright © {new Date().getFullYear()} | Pedro Venegas Todos los
             derechos reservados
           </span>
+          <LinkButton onClick={handleScrollTop}>
+            <Icon name="arrow up" style={{ color: "var(--color-text)" }} />
+          </LinkButton>
         </Flex>
       </Container>
     </Footer>
@@ -69,7 +76,7 @@ const Footer = styled.footer`
   justify-content: flex-end;
 
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 
   label {
     color: var(--color-text) !important;

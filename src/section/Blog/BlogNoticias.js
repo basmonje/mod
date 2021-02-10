@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Loader } from "semantic-ui-react";
 import { size } from "lodash";
-import { Container, Box, Col, Card, BoxTitle } from "../../component";
+import { Container, Box, Col, Card, BoxTitle, Grid } from "../../component";
 
 export default function BlogHome({ data }) {
   let countData;
@@ -16,17 +16,16 @@ export default function BlogHome({ data }) {
     <Wrapper>
       <Container>
         <BoxTitle title="Todas las entradas" count={countData} />
-        <Box>
-          {!data && <Loader>Cargando Noticias</Loader>}
-          {data && size(data) === 0 && (
-            <div>
-              <h3>No hay noticias</h3>
-            </div>
-          )}
-
+        {!data && <Loader>Cargando Noticias</Loader>}
+        {data && size(data) === 0 && (
+          <div>
+            <h3>No hay noticias</h3>
+          </div>
+        )}
+        <Grid mobile="2" tablet="2">
           {size(data) > 0 &&
             data.map(({ title, description, dates, count, media, slug }) => (
-              <Col type="col-2" key={slug}>
+              <Col type="col" key={slug}>
                 <Card
                   type="simple"
                   title={title}
@@ -38,7 +37,7 @@ export default function BlogHome({ data }) {
                 />
               </Col>
             ))}
-        </Box>
+        </Grid>
       </Container>
     </Wrapper>
   );

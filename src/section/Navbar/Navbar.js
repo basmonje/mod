@@ -1,7 +1,9 @@
+import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { Container, Flex } from "component";
 import { useRouter } from "next/router";
+import { Icon } from "semantic-ui-react";
 
 export default function NavbarComponent() {
   const { asPath } = useRouter();
@@ -39,6 +41,9 @@ export default function NavbarComponent() {
               </Li>
             </Flex>
           </Menu>
+          <Btn>
+            <Icon name="bars" />
+          </Btn>
         </Nav>
       </Container>
     </Navbar>
@@ -114,5 +119,18 @@ const Menu = styled.div`
   @media (min-width: ${(props) => props.theme.dimension.tablet}) {
     display: flex;
     align-items: center;
+  }
+`;
+
+const Btn = styled.div`
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: ${(props) => props.theme.dimension.tablet}) {
+    display: none;
   }
 `;

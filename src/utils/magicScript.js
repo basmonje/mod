@@ -7,9 +7,9 @@ const COLORS = {
   dark: {
     primary: "#333333",
     text: "#ddd",
-    background: "#252525",
+    background: "#12141d",
   },
-}
+};
 
 export const MagicScriptTag = () => {
   let codeToRunOnClient = `
@@ -59,7 +59,7 @@ export const MagicScriptTag = () => {
         : '${COLORS.dark.primary}'
     );
     root.style.setProperty('--initial-color-mode', colorMode);
-  })()`
+  })()`;
   // eslint-disable-next-line react/no-danger
-  return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
-}
+  return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
+};

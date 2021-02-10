@@ -74,6 +74,9 @@ const BoxNotice = styled.div`
   > div img {
     width: 100%;
     height: 100%;
+    min-height: 350px;
+    background-size: cover;
+    object-fit: cover;
     border-radius: 8px 8px 0 0;
   }
 `;
@@ -108,13 +111,15 @@ const BoxResponsiveBlog = styled.div`
     flex-direction: row;
 
     .context {
-      width: 55%;
+      width: 100%;
       height: 100%;
       margin-bottom: 0;
     }
 
     img {
-      width: 45%;
+      object-fit: cover;
+      max-width: 320px;
+      max-height: 350px;
       border-radius: 0 8px 8px 0;
     }
   }
