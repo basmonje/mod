@@ -17,7 +17,7 @@ export default function BlogHome({ data }) {
   return (
     <Wrapper>
       <Container>
-        <Flex paTop="100px" paBot="100px">
+        <Flex paTop="100px" paBot="100px" mobile="column">
           <Title size="medium" level="1">
             Noticias y Acciones
           </Title>

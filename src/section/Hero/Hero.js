@@ -7,7 +7,7 @@ export default function HeroComponent(props) {
     <Wrapper>
       <Container>
         <Content>
-          <Flex>
+          <Flex mobile="column">
             <Title size="big" level="1">
               Pedro Venegas
             </Title>

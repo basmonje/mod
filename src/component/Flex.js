@@ -19,4 +19,8 @@ const Row = styled.div`
   padding-top: ${(props) => props.paTop || "0"};
   padding-bottom: ${(props) => props.paBot || "0"};
   width: ${(props) => props.width || "100%"};
+
+  @media (min-width: ${(props) => props.theme.dimension.mobile}) {
+    flex-direction: ${(props) => props.mobile || "row"}};
+  }
 `;

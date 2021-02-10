@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
 import {
   Container,
   Flex,
@@ -10,18 +9,32 @@ import {
   Date,
   NavPost,
 } from "../../component";
+import BoxAvatar from "../../component/BoxAvatar";
 
 export default function Notice(props) {
   const { title, img, date, read, content, nav } = props;
   return (
     <Wrapper>
       <Container>
-        <Flex direction="column">
-          <Flex direction="column" align="flex-start" justify="flex-start">
+        <Flex direction="column" mobile="column">
+          <Flex
+            direction="column"
+            align="center"
+            justify="center"
+            mobile="column"
+          >
             <Title size="small">{title}</Title>
-            <Date>
-              {date} ~ {read} de lectura.
-            </Date>
+            <Flex
+              direction="column"
+              mobile="row"
+              justify="flex-start"
+              align="center"
+            >
+              <BoxAvatar src="/assets/img/perfil.jpg" name="Pedro venegas" />
+              <span>
+                {date} ~ {read} de lectura.
+              </span>
+            </Flex>
           </Flex>
 
           {img.url ? (
@@ -61,6 +74,10 @@ const Wrapper = styled.div`
     text-justify: inter-word;
   }
 
+  h2 {
+    margin-bottom: 2.8rem;
+  }
+
   p {
     font-size: 1.2rem;
     margin-bottom: 1rem !important;
@@ -69,7 +86,6 @@ const Wrapper = styled.div`
 
 const Markdown = styled.div`
   width: 100%;
-  padding-top: 100px;
 
   ul {
     padding-left: 1rem;
@@ -92,14 +108,14 @@ const Markdown = styled.div`
   h4,
   h5,
   h6 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.6rem;
     margin-top: 0.5rem;
   }
 `;
 
 const ContentImage = styled.div`
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
   img {
     width: 100%;
     border: none;
