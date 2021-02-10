@@ -11,13 +11,13 @@ export default function ColComponent({ children, type, ...props }) {
 const Col = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 `;
 
 const Col2 = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     flex: 0 0 50%;

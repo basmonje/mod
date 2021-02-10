@@ -18,4 +18,5 @@ const Row = styled.div`
   height: auto;
   padding-top: ${(props) => props.paTop || "0"};
   padding-bottom: ${(props) => props.paBot || "0"};
+  width: ${(props) => props.width || "100%"};
 `;
