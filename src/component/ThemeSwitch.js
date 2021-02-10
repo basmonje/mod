@@ -15,14 +15,14 @@ export default function ThemeSwitch() {
         <p>Modo Lectura</p>
         <Group>
           <ButtonBorder
-            active={colorMode === "light" ? "#ddd" : ""}
+            active={colorMode === "light" ? "#f05454" : ""}
             onClick={() => setColorMode("light")}
           >
             LIGHT
           </ButtonBorder>
 
           <ButtonBorder
-            active={colorMode === "dark" ? "#ddd" : ""}
+            active={colorMode === "dark" ? "#f05454" : ""}
             onClick={() => setColorMode("dark")}
           >
             DARK

@@ -1,6 +1,5 @@
 import SEO from "section/SEO";
-import Navbar from "section/Navbar";
-import ThemeSwitch from "../src/component/ThemeSwitch";
+import Layout from "../src/section/Layout";
 
 const styles = {
   maxWidth: "500px",
@@ -10,16 +9,14 @@ const styles = {
 
 function Error() {
   return (
-    <>
-      <ThemeSwitch />
+    <Layout>
       <SEO title="Página no encontrada." />
-      <Navbar />
       <div style={styles}>
         <h2>
           Error 404 <br /> 😱 Page not found
         </h2>
       </div>
-    </>
+    </Layout>
   );
 }
 

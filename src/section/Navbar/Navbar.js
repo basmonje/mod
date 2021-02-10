@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { Container, Flex } from "component";
+import { Container, Flex, ModalMenu } from "component";
 import { useRouter } from "next/router";
 import { Icon } from "semantic-ui-react";
 
-export default function NavbarComponent() {
+export default function NavbarComponent({ setActiveMenu }) {
   const { asPath } = useRouter();
 
   return (
@@ -41,8 +41,8 @@ export default function NavbarComponent() {
               </Li>
             </Flex>
           </Menu>
-          <Btn>
-            <Icon name="bars" />
+          <Btn onClick={() => setActiveMenu(true)}>
+            <Icon size="big" name="bars" />
           </Btn>
         </Nav>
       </Container>

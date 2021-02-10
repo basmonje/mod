@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Layout from "section/Layout";
 import { ToastContainer } from "react-toastify";
 import { DarkModeProvider } from "../src/context/ThemeMode";
 import { ThemeProvider } from "styled-components";
@@ -27,22 +26,20 @@ const App = ({ Component, pageProps }) => {
   return (
     <DarkModeProvider>
       <ThemeProvider theme={theme}>
-        <Layout>
-          <GlobalStyle />
-          <Component {...pageProps} />
-          <ToastContainer
-            className="toast-my"
-            position="top-right"
-            hideProgressBar={false}
-            autoClose={3000}
-            newestOnTop
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable
-            pauseOnHover={false}
-          />
-        </Layout>
+        <GlobalStyle />
+        <Component {...pageProps} />
+        <ToastContainer
+          className="toast-my"
+          position="top-right"
+          hideProgressBar={false}
+          autoClose={3000}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+        />
       </ThemeProvider>
     </DarkModeProvider>
   );

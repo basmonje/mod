@@ -83,7 +83,7 @@ const BoxNotice = styled.div`
 
 const BoxResponsiveBlog = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   h2,
   p,
   span {
@@ -104,7 +104,7 @@ const BoxResponsiveBlog = styled.div`
     background-size: cover;
     background-position: center;
     object-fit: cover;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px 8px 0 0;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {

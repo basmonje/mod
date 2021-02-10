@@ -1,21 +1,18 @@
 import SEO from "section/SEO";
-import Navbar from "section/Navbar";
 import { BlogNotice } from "section/Blog";
 import Footer from "section/Footer";
 import Head from "../src/component/Head";
-import ThemeSwitch from "../src/component/ThemeSwitch";
 import { getAllNotices } from "../src/api/notice";
+import Layout from "../src/section/Layout";
 
 export default function Noticias({ noticias, base }) {
   return (
-    <>
-      <ThemeSwitch />
+    <Layout>
       <SEO title="Noticias" />
-      <Navbar />
       <Head title="Noticias" />
       <BlogNotice data={noticias} />
       <Footer base={base} />
-    </>
+    </Layout>
   );
 }
 

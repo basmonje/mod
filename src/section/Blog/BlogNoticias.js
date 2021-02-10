@@ -22,7 +22,7 @@ export default function BlogHome({ data }) {
             <h3>No hay noticias</h3>
           </div>
         )}
-        <Grid mobile="2" tablet="2">
+        <Grid mobile="2" tablet="2" gap="2rem">
           {size(data) > 0 &&
             data.map(({ title, description, dates, count, media, slug }) => (
               <Col type="col" key={slug}>

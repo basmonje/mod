@@ -1,22 +1,19 @@
 import React from "react";
 import SEO from "section/SEO";
 import Hero from "section/Hero";
-import Navbar from "section/Navbar";
 import { BlogHome } from "section/Blog";
 import Footer from "section/Footer";
-import ThemeSwitch from "../src/component/ThemeSwitch";
 import { getLastNoticesApi } from "../src/api/notice";
+import Layout from "../src/section/Layout";
 
 export default function Home({ response, base }) {
   return (
-    <>
-      <ThemeSwitch />
+    <Layout>
       <SEO title="Inicio" />
-      <Navbar />
       <Hero />
       <BlogHome data={response} />
       <Footer base={base} />
-    </>
+    </Layout>
   );
 }
 

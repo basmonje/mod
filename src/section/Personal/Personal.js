@@ -64,9 +64,7 @@ export default function Personal() {
               ejercicio.
             </Description>
           </Context>
-          <Sidebar>
-            <h1>Sidebar</h1>
-          </Sidebar>
+          <Sidebar></Sidebar>
         </Flex>
       </Container>
     </Wrapper>
@@ -97,6 +95,8 @@ const Context = styled.div`
   img {
     margin-bottom: 1.2rem;
     width: 100%;
+    border: none;
+    border-radius: 8px;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {

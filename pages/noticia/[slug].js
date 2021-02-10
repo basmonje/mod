@@ -1,20 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import SEO from "section/SEO";
-import Navbar from "section/Navbar";
 import Footer from "section/Footer";
 import Notice from "section/Notice";
-import Head from "component/Head";
-import ThemeSwitch from "component/ThemeSwitch";
+
 import { getNoticeBySlug } from "../../src/api/notice";
+import Layout from "../src/section/Layout";
 
 export default function NoticeWrapper({ notice, base }) {
   const { title, description, date, count, content, media } = notice.notice[0];
   return (
-    <>
-      <ThemeSwitch />
+    <Layout>
       <SEO title="Nueva noticias" />
-      <Navbar />
       <Notice
         title={title}
         description={description}
@@ -25,7 +21,7 @@ export default function NoticeWrapper({ notice, base }) {
         img={media[0]}
       />
       <Footer base={base} />
-    </>
+    </Layout>
   );
 }
 

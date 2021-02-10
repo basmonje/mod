@@ -1,20 +1,17 @@
 import SEO from "section/SEO";
-import Navbar from "section/Navbar";
 import Footer from "section/Footer";
 import Contact from "section/Contact";
 import Head from "../src/component/Head";
-import ThemeSwitch from "../src/component/ThemeSwitch";
+import Layout from "../src/section/Layout";
 
 export default function Contacto({ base }) {
   return (
-    <>
-      <ThemeSwitch />
+    <Layout>
       <SEO title="Contacto" />
-      <Navbar />
       <Head title="Contacto" />
       <Contact base={base} />
       <Footer contact={false} />
-    </>
+    </Layout>
   );
 }
 
