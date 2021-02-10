@@ -21,23 +21,25 @@ const Wrapper = styled.div`
 
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
   align-items: center;
+  margin-bottom: 1rem;
 
   h1 {
     color: var(--color-text);
+    font-size: 1.2rem;
+    margin: 0;
   }
 
   p {
     padding-right: 0;
-    font-size: 18px;
+    font-size: 1rem;
     color: var(--color-text);
   }
 
   a {
     color: var(--color-text);
     padding-right: 0;
-    font-size: 18px;
+    font-size: 1rem;
   }
 
   a:hover {
@@ -47,7 +49,12 @@ const Wrapper = styled.div`
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
     padding: 1rem 3rem;
 
+    h1 {
+      font-size: 1.6rem;
+    }
+
     p {
+      font-size: 1.2rem;
       padding-right: 32px;
     }
 

@@ -15,6 +15,8 @@ import LinkTextComponent from "./LinkText";
 import NavPostComponent from "./NavPost";
 import GridComponent from "./Grid";
 import ModalMenuComponent from "./ModalMenu";
+import BoxRedesComponent from "./BoxRedes";
+import ContextComponent from "./Context";
 
 export const Container = (props) => <ContainerComponent {...props} />;
 export const Card = (props) => <CardComponent {...props} />;
@@ -33,3 +35,5 @@ export const LinkText = (props) => <LinkTextComponent {...props} />;
 export const NavPost = (props) => <NavPostComponent {...props} />;
 export const Grid = (props) => <GridComponent {...props} />;
 export const ModalMenu = (props) => <ModalMenuComponent {...props} />;
+export const BoxRedes = (props) => <BoxRedesComponent {...props} />;
+export const Context = (props) => <ContextComponent {...props} />;

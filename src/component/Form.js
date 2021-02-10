@@ -3,6 +3,7 @@ import { Form, Button, TextArea, Icon } from "semantic-ui-react";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import styled from "styled-components";
+import { BoxRedes } from "component";
 import * as Yup from "yup";
 import { postMessageContact } from "../api/contact";
 
@@ -79,17 +80,7 @@ export default function FormContact({ base }) {
         <Button type="submit" color="teal" loading={loading}>
           Enviar
         </Button>
-        <BoxRedes>
-          <a href="/#">
-            <Icon name="facebook" size="big" />
-          </a>
-          <a href="/#">
-            <Icon name="linkedin" size="big" />
-          </a>
-          <a href="/#">
-            <Icon name="twitter" size="big" />
-          </a>
-        </BoxRedes>
+        <BoxRedes />
       </Form>
     </Wrapper>
   );
@@ -97,20 +88,6 @@ export default function FormContact({ base }) {
 
 const Wrapper = styled.div`
   width: 100%;
-`;
-
-const BoxRedes = styled.nav`
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-end;
-
-  a {
-    color: var(--color-text);
-  }
-
-  a:hover {
-    color: ${(props) => props.theme.color.primary};
-  }
 `;
 
 function initialValues() {

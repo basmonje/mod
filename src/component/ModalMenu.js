@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Flex from "./Flex";
 import Link from "next/link";
 import { Icon } from "semantic-ui-react";
+import { BoxRedes } from "component";
 
 export default function ModalMenu({ setShow }) {
   const onClose = () => setShow(false);
@@ -34,17 +35,8 @@ export default function ModalMenu({ setShow }) {
             </Link>
           </li>
         </Flex>
-        <Flex align="flex-start" direction="row" paTop="50px">
-          <a href="#">
-            <Icon name="facebook" onClick={onClose} size="huge" />
-          </a>
-          <a href="#">
-            <Icon name="linkedin" onClick={onClose} size="huge" />
-          </a>
-          <a href="#">
-            <Icon name="twitter" onClick={onClose} size="huge" />
-          </a>
-        </Flex>
+
+        <BoxRedes menu />
       </Content>
     </Menu>
   );

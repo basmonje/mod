@@ -10,14 +10,14 @@ export default function LinkButton({ href, children, ...delegated }) {
 }
 
 const Wrapper = styled.button`
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   background: transparent;
   outline: none;
   border: none;
   border-radius: 8px;
 
   &:hover {
-    background: #ddd9;
+    background: #ddd8;
     outline: none;
     cursor: pointer;
   }
