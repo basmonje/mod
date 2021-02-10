@@ -88,6 +88,10 @@ const Card = styled.div`
     line-height: 30px;
     color: var(--color-text);
   }
+
+  a:hover {
+    color: ${(props) => props.theme.color.primary};
+  }
   h3 {
     font-size: 30px;
     font-weight: 600;

@@ -24,7 +24,7 @@ export default function BlogHome({ data }) {
           )}
 
           {size(data) > 0 &&
-            data.map(({ title, description, date, read, img, slug }) => (
+            data.map(({ title, description, date, read, media, slug }) => (
               <Col type="col-2" key={slug}>
                 <Card
                   type="simple"
@@ -32,7 +32,8 @@ export default function BlogHome({ data }) {
                   date={date}
                   read={read}
                   description={description}
-                  src={img}
+                  src={media[0]}
+                  slug={slug}
                 />
               </Col>
             ))}

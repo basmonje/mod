@@ -79,7 +79,7 @@ const WrapperLink = styled.div`
   border: none;
   border-radius: 8px;
   a {
-    color: #333;
+    color: #333 !important;
     padding: 1rem;
     font-size: 1.8rem;
     font-weight: 500;
@@ -100,5 +100,6 @@ const ArrowRow = styled.div`
     font-size: 1.32rem;
     font-weight: 600;
     margin: 0 1rem;
+    color: #333 !important;
   }
 `;

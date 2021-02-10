@@ -9,7 +9,7 @@ import ThemeSwitch from "component/ThemeSwitch";
 import { getNoticeBySlug } from "../../src/api/notice";
 
 export default function NoticeWrapper({ notice }) {
-  const { title, description, date, count, content } = notice.notice[0];
+  const { title, description, date, count, content, media } = notice.notice[0];
   return (
     <>
       <ThemeSwitch />
@@ -22,6 +22,7 @@ export default function NoticeWrapper({ notice }) {
         read={count}
         content={content}
         nav={notice.nav}
+        img={media[0]}
       />
       <Footer />
     </>

@@ -28,6 +28,7 @@ const Theme = {
   },
   color: {
     themeswitch: "#ddd",
+    primary: "#f05454",
     tone: {
       bg: "#ddd",
       hover: "#ddd5",

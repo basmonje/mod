@@ -1,7 +1,5 @@
 // import { BASE_PATH } from "../utils/constants"
-
 const BASE_PATH = process.env.BASE_PATH;
-console.log(BASE_PATH);
 
 export async function postMessageContact(message) {
   try {

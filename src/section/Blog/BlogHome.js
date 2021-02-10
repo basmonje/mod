@@ -32,7 +32,7 @@ export default function BlogHome({ data }) {
             </div>
           )}
           {size(data) > 0 &&
-            data.map(({ title, slug, description, date, read, img }) => (
+            data.map(({ title, slug, description, date, read, thumbnail }) => (
               <Col key={slug} type="col">
                 <Card
                   type="blog"
@@ -40,8 +40,8 @@ export default function BlogHome({ data }) {
                   read={read}
                   date={date}
                   description={description}
-                  src={img}
                   slug={slug}
+                  media={thumbnail.large || thumbnail.thumbnail}
                 />
               </Col>
             ))}

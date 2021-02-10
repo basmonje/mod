@@ -11,7 +11,7 @@ import {
 } from "../../component";
 
 export default function Notice(props) {
-  const { title, description, date, read, content, nav } = props;
+  const { title, img, date, read, content, nav } = props;
   return (
     <Wrapper>
       <Container>
@@ -21,8 +21,16 @@ export default function Notice(props) {
             <Date>
               {date} ~ {read} de lectura.
             </Date>
-            <Description>{description}</Description>
           </Flex>
+
+          {img.url ? (
+            <ContentImage>
+              <img src={img.url} alt={title} />
+            </ContentImage>
+          ) : (
+            <div />
+          )}
+
           <Markdown>
             <ReactMarkdown children={content} />
             <NavPost data={nav} />
@@ -39,15 +47,62 @@ const Wrapper = styled.div`
   padding-top: 100px;
 
   h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  li,
   p {
     color: var(--color-text);
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   p {
-    margin-bottom: 0.9rem !important;
+    font-size: 1.2rem;
+    margin-bottom: 1rem !important;
   }
 `;
 
 const Markdown = styled.div`
   width: 100%;
+  padding-top: 100px;
+
+  ul {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: ${(props) => props.theme.dimension.tablet}) {
+      padding-left: 2.6rem;
+    }
+  }
+
+  li {
+    list-style: disc;
+    font-size: 1.1rem;
+    line-height: 25px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+  }
+`;
+
+const ContentImage = styled.div`
+  padding-top: 100px;
+  padding-bottom: 100px;
+  img {
+    width: 100%;
+    border: none;
+    border-radius: 8px !important;
+    background-size: cover;
+  }
 `;

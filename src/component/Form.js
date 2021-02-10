@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import styled from "styled-components";
 import * as Yup from "yup";
-// import { postMessageContact } from "api/contact";
+import { postMessageContact } from "../api/contact";
 
 const FormContact = () => {
   const [loading, setLoading] = useState(false);
@@ -14,20 +14,21 @@ const FormContact = () => {
     validationSchema: Yup.object(validationSchema()),
     onSubmit: async (formData) => {
       setLoading(true);
-      //   const response = await postMessageContact(formData);
-      //   if (!response) {
-      //     toast.error("Error al enviar formulario");
-      //     setLoading(false);
+      const response = await postMessageContact(formData);
+      console.log("rest", response);
+      if (!response) {
+        toast.error("Error al enviar formulario");
+        setLoading(false);
 
-      //     if (response.statusCode === 400 || response.statusCode === 401) {
-      //       toast.error("Peticion mal efectuada");
-      //       setLoading(false);
-      //     }
-      //   } else {
-      //     toast.success("Mensaje enviado correctamente ☑️");
-      //     formik.resetForm();
-      //     setLoading(false);
-      //   }
+        if (response.statusCode === 400 || response.statusCode === 401) {
+          toast.error("Peticion mal efectuada");
+          setLoading(false);
+        }
+      } else {
+        toast.success("Mensaje enviado correctamente ☑️");
+        formik.resetForm();
+        setLoading(false);
+      }
     },
   });
 
@@ -105,6 +106,10 @@ const BoxRedes = styled.nav`
 
   a {
     color: var(--color-text);
+  }
+
+  a:hover {
+    color: ${(props) => props.theme.color.primary};
   }
 `;
 

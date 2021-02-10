@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   }
 
   a:hover {
-    color: var(--color-primary);
+    color: ${(props) => props.theme.color.primary};
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {

@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-
-import { Heading, Paragraph, Date, Flex, Description } from "component";
+import { Heading, Date, Description } from "component";
 
 export default function CardComponent({ type, ...props }) {
   if (!props.title) return null;
@@ -11,7 +10,7 @@ export default function CardComponent({ type, ...props }) {
   return null;
 }
 
-function CardBlog({ read, title, date, description, src, slug }) {
+function CardBlog({ read, title, date, description, media, slug }) {
   return (
     <Card as="article" background="#f6f6f6">
       <BoxResponsiveBlog>
@@ -26,24 +25,26 @@ function CardBlog({ read, title, date, description, src, slug }) {
           </Date>
           <Description>{description}</Description>
         </div>
-        <img src={src} alt={title} />
+        {media.url ? <img src={media.url} alt={title} /> : <div />}
       </BoxResponsiveBlog>
     </Card>
   );
 }
 
-function CardSimple({ title, date, description, src, read }) {
+function CardSimple({ title, date, description, src, read, slug }) {
   return (
     <Card as="article" background="#f6f6f6">
       <BoxNotice>
-        <div>
-          <img src={src} alt={title} />
-        </div>
+        <div>{src ? <img src={src.url} alt={title} /> : <div />}</div>
         <Box>
           <Date>
             {date} ~ {read} de lectura.
           </Date>
-          <Heading level={5}>{title}</Heading>
+          <Heading level={5}>
+            <Link href={"/noticia/[slug]"} as={`/noticia/${slug}`}>
+              <a>{title}</a>
+            </Link>
+          </Heading>
           <Description>{description}</Description>
         </Box>
       </BoxNotice>
