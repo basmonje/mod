@@ -8,14 +8,17 @@ export async function getAllNotices() {
     const response = await fetch(url);
     const result = await response.json();
     const resultFilter = result.map(
-      ({ media, id, slug, title, date, description }) => {
+      ({ media, id, slug, title, date, description, content }) => {
+        const count = CountWords(content);
+        const dates = Fechas(date);
         return {
           media,
           id,
           slug,
           title,
-          date,
+          dates,
           description,
+          count,
         };
       }
     );

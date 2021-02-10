@@ -8,7 +8,7 @@ import Head from "component/Head";
 import ThemeSwitch from "component/ThemeSwitch";
 import { getNoticeBySlug } from "../../src/api/notice";
 
-export default function NoticeWrapper({ notice }) {
+export default function NoticeWrapper({ notice, base }) {
   const { title, description, date, count, content, media } = notice.notice[0];
   return (
     <>
@@ -24,13 +24,14 @@ export default function NoticeWrapper({ notice }) {
         nav={notice.nav}
         img={media[0]}
       />
-      <Footer />
+      <Footer base={base} />
     </>
   );
 }
 
 export async function getServerSideProps(context) {
   const post = await getNoticeBySlug(context.query.slug);
+  const base = process.env.BASE_PATH;
 
   const { nav } = post;
 
@@ -45,6 +46,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       notice: post,
+      base,
     },
   };
 }

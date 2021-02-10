@@ -1,9 +1,6 @@
-// import { BASE_PATH } from "../utils/constants"
-const BASE_PATH = process.env.BASE_PATH;
-
-export async function postMessageContact(message) {
+export async function postMessageContact(base, message) {
   try {
-    const url = `${BASE_PATH}/mensajes`;
+    const url = `${base}/mensajes`;
     const params = {
       method: "POST",
       headers: {

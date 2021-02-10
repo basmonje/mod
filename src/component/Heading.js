@@ -9,13 +9,13 @@ export default function Heading({ children, level = 2 }) {
 const Wrapper = styled.h2`
   font-weight: 600;
   color: #333 !important;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
   text-justify: inter-word;
-  line-height: 29px;
+  line-height: 23px;
   padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 
   a {
     color: #333 !important;
@@ -26,10 +26,10 @@ const Wrapper = styled.h2`
   }
 
   @media (min-width: ${(props) => props.theme.dimension.small}) {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
   }
 
   @media (min-width: ${(props) => props.theme.dimension.mobile}) {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 `;

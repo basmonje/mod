@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Flex, Box, Col, Form } from "../../component";
 
-export default function Contact() {
+export default function Contact({ base }) {
   return (
     <Wrapper>
       <Container>
@@ -11,7 +11,7 @@ export default function Contact() {
             <Text />
           </Col>
           <Col type="col-2">
-            <Form />
+            <Form base={base} />
           </Col>
         </Box>
       </Container>

@@ -7,7 +7,8 @@ export default function DateComponent({ children }) {
 
 const Date = styled.span`
   color: var(--color-text);
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 1rem;
   margin: 6px 0;
 
   @media (max-width: 500px) {

@@ -11,6 +11,7 @@ export default function BlogHome({ data }) {
   } else {
     countData = `${size(data)} Noticia`;
   }
+
   return (
     <Wrapper>
       <Container>
@@ -24,13 +25,13 @@ export default function BlogHome({ data }) {
           )}
 
           {size(data) > 0 &&
-            data.map(({ title, description, date, read, media, slug }) => (
+            data.map(({ title, description, dates, count, media, slug }) => (
               <Col type="col-2" key={slug}>
                 <Card
                   type="simple"
                   title={title}
-                  date={date}
-                  read={read}
+                  date={dates}
+                  read={count}
                   description={description}
                   src={media[0]}
                   slug={slug}

@@ -9,11 +9,11 @@ import {
   Title,
 } from "../../component";
 
-export default function FooterComponent({ contact = true }) {
+export default function FooterComponent({ contact = true, base }) {
   return (
     <Footer>
       <Container>
-        {contact && <Contact />}
+        {contact && <Contact base={base} />}
         <Flex paTop="100px">
           <span style={{ color: "var(--color-text)" }}>
             Copyright © {new Date().getFullYear()} | Pedro Venegas Todos los
@@ -25,7 +25,7 @@ export default function FooterComponent({ contact = true }) {
   );
 }
 
-function Contact() {
+function Contact({ base }) {
   return (
     <Box>
       <Col type="col-2">
@@ -48,7 +48,7 @@ function Contact() {
       </Col>
       <Col type="col-2">
         <Title size="small">Contáctame</Title>
-        <Form />
+        <Form base={base} />
       </Col>
     </Box>
   );

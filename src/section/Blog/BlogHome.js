@@ -32,12 +32,12 @@ export default function BlogHome({ data }) {
             </div>
           )}
           {size(data) > 0 &&
-            data.map(({ title, slug, description, date, read, thumbnail }) => (
+            data.map(({ title, slug, description, date, count, thumbnail }) => (
               <Col key={slug} type="col">
                 <Card
                   type="blog"
                   title={title}
-                  read={read}
+                  read={count}
                   date={date}
                   description={description}
                   slug={slug}

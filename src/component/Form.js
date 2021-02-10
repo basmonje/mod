@@ -6,7 +6,7 @@ import styled from "styled-components";
 import * as Yup from "yup";
 import { postMessageContact } from "../api/contact";
 
-const FormContact = () => {
+export default function FormContact({ base }) {
   const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
@@ -14,7 +14,7 @@ const FormContact = () => {
     validationSchema: Yup.object(validationSchema()),
     onSubmit: async (formData) => {
       setLoading(true);
-      const response = await postMessageContact(formData);
+      const response = await postMessageContact(base, formData);
       console.log("rest", response);
       if (!response) {
         toast.error("Error al enviar formulario");
@@ -93,7 +93,7 @@ const FormContact = () => {
       </Form>
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   width: 100%;
@@ -132,5 +132,3 @@ function validationSchema() {
     message: Yup.string().required("Debe ingresar un mensaje"),
   };
 }
-
-export default FormContact;

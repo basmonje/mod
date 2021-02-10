@@ -16,8 +16,4 @@ const Description = styled.p`
   @media (min-width: ${(props) => props.theme.dimension.small}) {
     font-size: 1.2rem;
   }
-
-  @media (min-width: ${(props) => props.theme.dimension.mobile}) {
-    font-size: 1.4rem;
-  }
 `;

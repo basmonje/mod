@@ -21,7 +21,7 @@ function CardBlog({ read, title, date, description, media, slug }) {
             </Link>
           </Heading>
           <Date>
-            {date} ~ {read} de lectura.
+            <b>{date}</b> ~ <b>{read}</b> de lectura.
           </Date>
           <Description>{description}</Description>
         </div>
@@ -38,7 +38,7 @@ function CardSimple({ title, date, description, src, read, slug }) {
         <div>{src ? <img src={src.url} alt={title} /> : <div />}</div>
         <Box>
           <Date>
-            {date} ~ {read} de lectura.
+            <b>{date}</b> ~ <b>{read}</b> de lectura.
           </Date>
           <Heading level={5}>
             <Link href={"/noticia/[slug]"} as={`/noticia/${slug}`}>
@@ -90,7 +90,7 @@ const BoxResponsiveBlog = styled.div`
   .context {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem 2rem;
     margin-bottom: 2rem;
     width: 100%;
     height: 100%;

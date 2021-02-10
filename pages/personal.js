@@ -5,7 +5,7 @@ import Personal from "section/Personal";
 import Head from "../src/component/Head";
 import ThemeSwitch from "../src/component/ThemeSwitch";
 
-export default function Home() {
+export default function Home({ base }) {
   return (
     <>
       <ThemeSwitch />
@@ -13,7 +13,17 @@ export default function Home() {
       <Navbar />
       <Head title="Pedro Venegas" />
       <Personal />
-      <Footer />
+      <Footer base={base} />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const base = process.env.BASE_PATH;
+
+  return {
+    props: {
+      base,
+    },
+  };
 }

@@ -6,7 +6,7 @@ import Head from "../src/component/Head";
 import ThemeSwitch from "../src/component/ThemeSwitch";
 import { getAllNotices } from "../src/api/notice";
 
-export default function Home({ noticias }) {
+export default function Noticias({ noticias, base }) {
   return (
     <>
       <ThemeSwitch />
@@ -14,17 +14,19 @@ export default function Home({ noticias }) {
       <Navbar />
       <Head title="Noticias" />
       <BlogNotice data={noticias} />
-      <Footer />
+      <Footer base={base} />
     </>
   );
 }
 
 export async function getServerSideProps(context) {
   const response = await getAllNotices();
+  const base = process.env.BASE_PATH;
 
   return {
     props: {
       noticias: response,
+      base,
     },
   };
 }
